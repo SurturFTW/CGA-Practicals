@@ -1,54 +1,32 @@
-#include<graphics.h>
 #include<stdio.h>
-#include<math.h>
-int main()
-{
-	int gd,gm,x,y,end,p,x1,x2,y1,y2,dx,dy;
-	detectgraph(&gd,&gm);
-	initgraph(&gd,&gm,"C://TurboC3//BGI");
+#include<conio.h>
+#include<graphics.h>
 
-	printf("Enter the value of x1 y1 : ");
-	scanf("%d %d",&x1,&y1);
+void main(){
+    int gm=DETECT,gd,i,j;
+    int x,y,x1,y1,x2,y2,dx,dy;
+    int p_er;
+    printf("Enter x1 and y1 value\n");
+    scanf("%d %d",&x1,&y1);
+    printf("Enter x2 and y2 values\n");
+    scanf("%d %d",&x2,&y2);
+    initgraph(&gm,&gd,"C:\\TC\\BGI");
+    x = x1;y = y1;
+    dx = x2-x1;
+    dy = y2-y1;
+    p_er = 2*dy-dx;
 
-	printf("Enter the value of x2 y2 : ");
-	scanf("%d %d",&x2,&y2);
-
-
-	dx=abs(x1-x2);
-	dy=abs(y1-y2);
-	p = 2*dy-dx;
-
-	if(x1>x2)
-	{
-		x=x2;
-		y=y2;
-		end=x1;
-	}
-	else
-	{
-		x=x1;
-		y=y1;
-		end=x2;
-	}
-
-	while(x<=end)
-	{
-		if(p<0)
-		{
-			x++;
-			p=p+2*dy;
-		}
-		else
-		{
-			x++;
-			y++;
-			p=p+2*dy-2*dx;
-		}
-		putpixel(x,y,BLUE);
-		delay(30);
-	}
-
-	getch();
-	closegraph();
-	return 0;
+    while(x < x2){
+        putpixel(x,y,3);
+        delay(20);
+        if(p_er < 0){
+            p_er += 2*dy;
+        }
+            else{
+                p_er += 2*dy-2*dx;
+                y++;
+            }
+        x++;
+    }
+    getch();
 }
