@@ -1,39 +1,28 @@
-#include <conio.h>
 #include <graphics.h>
+#include <stdio.h>
 
-int main()
-{
-    int an = DETECT, as, i, a;
+void main(){
+	int i, j = 0, gd = DETECT, gm;
+	initgraph(&gd, &gm, "C://TC//BGI");
 
-    initgraph(&an, &as, "C:\\TURBOC3\\BGI");
-     for(i=0;i<500;i++)
-     {
-   setbkcolor(6);
-   setcolor(3);
-	line(50 + i, 405, 100 + i, 405);
-	line(75 + i, 375, 125 + i, 375);
-	line(50 + i, 405, 75 + i, 375);
-	line(100 + i, 405, 100 + i, 345);
-	line(150 + i, 405, 100 + i, 345);
-	line(75 + i, 345, 75 + i, 370);
-	line(70 + i, 370, 80 + i, 370);
-	line(80 + i, 345, 100 + i, 345);
-
-
-	circle(150 + i, 405, 30);
-	circle(50 + i, 405, 30);
-   setcolor(1);
-	line(0, 436, getmaxx(), 436);
-
-
-
-	delay(7);
-     cleardevice();
-
-
-    }
-
-    getch();
-
-    closegraph();
+	for (i = 0; i <= 420; i = i + 10) {
+		setcolor(RED);
+		line(0 + i, 300, 210 + i, 300);
+		line(50 + i, 300, 75 + i, 270);
+		line(75 + i, 270, 150 + i, 270);
+		line(150 + i, 270, 165 + i, 300);
+		line(0 + i, 300, 0 + i, 330);
+		line(210 + i, 300, 210 + i, 330);
+		circle(65 + i, 330, 15);
+		circle(65 + i, 330, 2);
+		circle(145 + i, 330, 15);
+		circle(145 + i, 330, 2);
+		line(0 + i, 330, 50 + i, 330);
+		line(80 + i, 330, 130 + i, 330);
+		line(210 + i, 330, 160 + i, 330);
+		delay(100);
+		cleardevice();
+	}
+	getch();
+	closegraph();
 }
