@@ -23,6 +23,7 @@ cleardevice();
 printf("Before clipping");
 rectangle(W_xmin,W_ymin,W_xmax,W_ymax);
 line(x,y,x1,y1);
+ //computation
 if(y>W_ymax)  {
 rcode_begin[0]=1;     // Top
 flag=1 ;
@@ -57,6 +58,7 @@ if(x1<W_xmin){
 rcode_end[3]=1;           //Left
 flag=1;
  }
+ //region code setting doene
 if(flag==0)
 {
 printf("No need of clipping as it is already in window");
@@ -73,6 +75,7 @@ printf("\n Line is completely outside the window");
 }
 else{
 slope=(float)(y1-y)/(x1-x);
+ //slope cal
 if(rcode_begin[2]==0 && rcode_begin[3]==1)   //left
 {
 y=y+(float) (W_xmin-x)*slope ;
