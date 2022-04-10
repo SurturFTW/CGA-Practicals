@@ -40,10 +40,10 @@ int main()
         putpixel(a-x,b+y,7);
         putpixel(a-x,b-y,7);
         if(p2 >= 0){
-            p2 += - dy + (rxrx);
+            p2 += - dy + (rx * rx);
         }
         else{
-            p2 += dx - dy + (rx rx);
+            p2 += dx - dy + (rx * rx);
             x++;
         }
         y--;

@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
 #include<graphics.h>
-
 void main(){
     int gm=DETECT,gd,i,j;
     int x,y,x1,y1,x2,y2,dx,dy;
