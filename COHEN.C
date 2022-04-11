@@ -2,6 +2,7 @@
 #include<conio.h>
 #include<stdio.h>
 #include<math.h>
+//
 void main()
 {
 int rcode_begin[4]={0,0,0,0},rcode_end[4]={0,0,0,0},region_code[4];
